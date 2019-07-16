@@ -1,0 +1,73 @@
+A:link {	COLOR: #4F6EB2; BACKGROUND-COLOR: transparent; TEXT-DECORATION: none}
+A:visited {	COLOR: #4F6EB2; BACKGROUND-COLOR: transparent; TEXT-DECORATION: none}
+A:active {	COLOR: red; BACKGROUND-COLOR: transparent; TEXT-DECORATION: none}
+A:hover {	TEXT-DECORATION: underline}
+table {style="border-collapse collapse";}
+B {	FONT-WEIGHT: bold}
+.celda_titulo {  FONT-WEIGHT: bold; FONT-SIZE: 10px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif }
+tr {
+
+}
+
+tr.SeleccionDynamicCombo {background-color: #3999FF;cursor: pointer; color:white;}
+tr.ContenidoDynamicCombo {background-color: #F0F0F0;cursor: pointer;FONT-WEIGHT: bold; color:black; FONT-SIZE: 10px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif}
+tr.registros {font-size:9px;FONT-WEIGHT: bold; height:18px; border:solid 0.5px; border-color:white; color:white; background-color:#3999FF;}
+
+td.sinbordes {FONT-WEIGHT: normal; FONT-SIZE: 12px; FONT-FAMILY: verdana,arial,helvetica,sans-serif;border-top-style:none; border-right-style:none; border-bottom-style:none; border-left-style:none;}
+td.registros {border-top-style:hidden; border-right-style:hidden; border-bottom-style:hidden; border-left-style:hidden;}
+td.paginacion {border-color: #4B4B4B; border-style:hidden;}
+
+div.dynamicCombo {border: 0px solid #7499C5;height:17px;}
+
+div.paginacion {background-color:#E1E4FF;
+}
+
+
+input.dynamicCombo {height:17px;border: 0px transparent;font-size: 9px;background-color: #3999FF; color: white;font-weight: bold;FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif}
+input.paginacion {background-color:#3999FF; color:WHITE;font-size: 8px;font-weight: bold;border: 1px solid white;text-align: center;}
+
+
+div.dynamicCombo2 {border: 0px solid #7499C5;height:19px; 
+}
+input.dynamicCombo2 {height:12px;border: 1px transparent;font-size: 9px;background-color: white; color: #4F6EB2;font-weight: bold;FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif}
+
+.button {
+			background-color: #98c593;
+			border: 0;
+			border-radius: 3.5em;
+			color: #fff;
+			cursor: pointer;
+			display: inline-block;
+			height: 3.5em;
+			line-height: 3.5em;
+			outline: 0;
+			padding: 0 2em 0 2em;
+			position: relative;
+			text-align: center;
+			text-decoration: none;
+			-moz-appearance: none;
+			-webkit-appearance: none;
+			-o-appearance: none;
+			-ms-appearance: none;
+			appearance: none;
+			-moz-transition: all 0.2s ease-in-out;
+			-webkit-transition: all 0.2s ease-in-out;
+			-o-transition: all 0.2s ease-in-out;
+			-ms-transition: all 0.2s ease-in-out;
+			transition: all 0.2s ease-in-out;
+		}
+
+			.button.down {
+				width: 5em;
+				height: 5em;
+				line-height: 4.5em;
+				padding: 0;
+				background-image: url('../img/responsive/dark-arrow.svg');
+				background-position: center center;
+				background-repeat: no-repeat;
+				text-indent: -10em;
+				overflow: hidden;
+			}
+            .button.style2.down {
+					background-image: url('../img/responsive/arrow.svg');
+				}

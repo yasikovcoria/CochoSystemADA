@@ -1,0 +1,8 @@
+CantidadAgregada	Currency		15.2
+FechaIngreso	Date		01/01/2015
+Unidad	String	2000	Pieza
+Producto	String	3000	Desarmador de Plano
+PrecioAnterior	Currency		100.20
+PrecioActual	Currency		150.23
+Existencia	Currency		100.5
+NumeroRegistro	Number		10

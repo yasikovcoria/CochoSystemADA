@@ -1,0 +1,11 @@
+Cantidad	Number
+Unidad	String	1000
+Descripcion	String	1000
+Importe	currency
+ValorUnitario	currency
+FechaNota	datetime	
+numeroNota	Number	1000
+totalNota	currency
+subTotalNota	currency
+ivaNota	currency
+		

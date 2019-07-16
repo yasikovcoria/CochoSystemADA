@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://service.timbrado.xpd.mx/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" targetNamespace="http://service.timbrado.xpd.mx/" version="1.0">
+  <xsd:element name="timbrar" type="tns:timbrar" />
+  <xsd:element name="timbrarResponse" type="tns:timbrarResponse" />
+  <xsd:complexType name="timbrar">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="usuario" type="xsd:string" />
+      <xsd:element minOccurs="0" name="contrasena" type="xsd:string" />
+      <xsd:element minOccurs="0" name="cfdi" type="xsd:base64Binary" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="timbrarResponse">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="return" type="tns:respuestaTimbrado" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="respuestaTimbrado">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="codigo" type="xsd:string" />
+      <xsd:element minOccurs="0" name="mensaje" type="xsd:string" />
+      <xsd:element minOccurs="0" name="timbre" type="xsd:string" />
+      <xsd:element minOccurs="0" name="uuid" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xs:schema>

@@ -1,0 +1,41 @@
+﻿.offsettingItems {
+
+            height: 275px;
+
+            padding-left: 25px;
+
+        }
+
+ 
+
+        .expandDirection {
+
+            height: 65px;
+
+            margin-top: 20px;
+
+            padding-left: 15px;
+
+            padding-top: 10px;
+
+        }
+
+ 
+
+        div.RadForm_Silk.RadForm.rfdFieldset fieldset,
+
+        div.RadForm_Silk.RadForm.rfdFieldset table.rfdRoundedWrapper_fieldset fieldset,
+
+        div.RadForm_Silk.RadForm.rfdFieldset fieldset.rfdFieldset {
+
+            border: 0px solid #C2C2C2;
+
+        }
+
+ 
+
+     .qsf-demo-canvas .RadMenu .rmLeftImage {
+
+          min-width: 0;
+
+     }

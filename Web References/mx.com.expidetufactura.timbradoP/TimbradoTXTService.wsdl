@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://service.txt.timbrado.xpd.mx/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="TimbradoTXTService" targetNamespace="http://service.txt.timbrado.xpd.mx/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema xmlns:tns="http://service.xpd.mx/" targetNamespace="http://service.xpd.mx/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="cancelar" type="tns:cancelar" />
+      <xs:element name="cancelarResponse" type="tns:cancelarResponse" />
+      <xs:complexType name="respuestaCancelacion">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="acuse" type="xs:string" />
+          <xs:element minOccurs="0" name="codEstatus" type="xs:string" />
+          <xs:element minOccurs="0" name="codMensaje" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="estatusUUIDs" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="uuids" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="cancelarResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:respuestaCancelacion" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="cancelar">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="usuario" type="xs:string" />
+          <xs:element minOccurs="0" name="token" type="xs:string" />
+          <xs:element minOccurs="0" name="xmlBytes" type="xs:base64Binary" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema xmlns:ns1="http://service.xpd.mx/" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://service.txt.timbrado.xpd.mx/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://service.xpd.mx/" />
+      <xs:element name="agregarCSD" type="tns:agregarCSD" />
+      <xs:element name="agregarCSDResponse" type="tns:agregarCSDResponse" />
+      <xs:element name="agregarLogo" type="tns:agregarLogo" />
+      <xs:element name="agregarLogoResponse" type="tns:agregarLogoResponse" />
+      <xs:element name="cancelarUUID" type="tns:cancelarUUID" />
+      <xs:element name="cancelarUUIDResponse" type="tns:cancelarUUIDResponse" />
+      <xs:element name="numeroLetra" type="tns:numeroLetra" />
+      <xs:element name="numeroLetraResponse" type="tns:numeroLetraResponse" />
+      <xs:element name="timbrarTXT" type="tns:timbrarTXT" />
+      <xs:element name="timbrarTXTNomina" type="tns:timbrarTXTNomina" />
+      <xs:element name="timbrarTXTNominaResponse" type="tns:timbrarTXTNominaResponse" />
+      <xs:element name="timbrarTXTResponse" type="tns:timbrarTXTResponse" />
+      <xs:element name="timbrarTXTYPDF" type="tns:timbrarTXTYPDF" />
+      <xs:element name="timbrarTXTYPDFNomina" type="tns:timbrarTXTYPDFNomina" />
+      <xs:element name="timbrarTXTYPDFNominaResponse" type="tns:timbrarTXTYPDFNominaResponse" />
+      <xs:element name="timbrarTXTYPDFP" type="tns:timbrarTXTYPDFP" />
+      <xs:element name="timbrarTXTYPDFPNomina" type="tns:timbrarTXTYPDFPNomina" />
+      <xs:element name="timbrarTXTYPDFPNominaResponse" type="tns:timbrarTXTYPDFPNominaResponse" />
+      <xs:element name="timbrarTXTYPDFPResponse" type="tns:timbrarTXTYPDFPResponse" />
+      <xs:element name="timbrarTXTYPDFResponse" type="tns:timbrarTXTYPDFResponse" />
+      <xs:complexType name="timbrarTXTYPDF">
+        <xs:sequence>
+          <xs:element name="usuario" type="xs:string" />
+          <xs:element name="contrasena" type="xs:string" />
+          <xs:element name="archivoTXT" type="xs:base64Binary" />
+          <xs:element name="generaPDF" type="xs:boolean" />
+          <xs:element minOccurs="0" name="plantilla" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="timbrarTXTYPDFResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:respuestaTimbradoTXT" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="respuestaTimbradoTXT">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:respuestaTXT">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="pdf" type="xs:base64Binary" />
+              <xs:element minOccurs="0" name="xmlTimbrado" type="xs:base64Binary" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="respuestaTXT">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="codigo" type="xs:string" />
+          <xs:element minOccurs="0" name="mensaje" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="agregarCSD">
+        <xs:sequence>
+          <xs:element name="usuario" type="xs:string" />
+          <xs:element name="contrasena" type="xs:string" />
+          <xs:element name="contrasenaLlave" type="xs:string" />
+          <xs:element name="certificado" type="xs:base64Binary" />
+          <xs:element name="llavePrivada" type="xs:base64Binary" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="agregarCSDResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:respuestaAgregarCSD" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="respuestaAgregarCSD">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:respuestaTXT">
+            <xs:sequence />
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="timbrarTXTYPDFPNomina">
+        <xs:sequence>
+          <xs:element name="usuario" type="xs:string" />
+          <xs:element name="contrasena" type="xs:string" />
+          <xs:element name="archivoTXT" type="xs:base64Binary" />
+          <xs:element name="generaPDF" type="xs:boolean" />
+          <xs:element name="plantilla" type="xs:int" />
+          <xs:element name="properties" type="xs:base64Binary" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="timbrarTXTYPDFPNominaResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:respuestaTimbradoTXT" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="timbrarTXTYPDFNomina">
+        <xs:sequence>
+          <xs:element name="usuario" type="xs:string" />
+          <xs:element name="contrasena" type="xs:string" />
+          <xs:element name="archivoTXT" type="xs:base64Binary" />
+          <xs:element name="generaPDF" type="xs:boolean" />
+          <xs:element name="plantilla" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="timbrarTXTYPDFNominaResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:respuestaTimbradoTXT" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="timbrarTXTNomina">
+        <xs:sequence>
+          <xs:element name="usuario" type="xs:string" />
+          <xs:element name="contrasena" type="xs:string" />
+          <xs:element name="archivoTXT" type="xs:base64Binary" />
+          <xs:element name="plantilla" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="timbrarTXTNominaResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:respuestaTimbradoTXT" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="cancelarUUID">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="usuario" type="xs:string" />
+          <xs:element minOccurs="0" name="contrasena" type="xs:string" />
+          <xs:element minOccurs="0" name="noCertificado" type="xs:string" />
+          <xs:element minOccurs="0" name="uuid" type="xs:string" />
+          <xs:element minOccurs="0" name="emisor" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="cancelarUUIDResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="ns1:respuestaCancelacion" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="timbrarTXT">
+        <xs:sequence>
+          <xs:element name="usuario" type="xs:string" />
+          <xs:element name="contrasena" type="xs:string" />
+          <xs:element name="archivoTXT" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="plantilla" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="timbrarTXTResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:respuestaTimbradoTXT" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="agregarLogo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="usuario" type="xs:string" />
+          <xs:element minOccurs="0" name="contrasena" type="xs:string" />
+          <xs:element minOccurs="0" name="emisor" type="xs:string" />
+          <xs:element minOccurs="0" name="logo" type="xs:base64Binary" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="agregarLogoResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:respuestaAgregarLogo" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="respuestaAgregarLogo">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:respuestaTXT">
+            <xs:sequence />
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="timbrarTXTYPDFP">
+        <xs:sequence>
+          <xs:element name="usuario" type="xs:string" />
+          <xs:element name="contrasena" type="xs:string" />
+          <xs:element name="archivoTXT" type="xs:base64Binary" />
+          <xs:element name="generaPDF" type="xs:boolean" />
+          <xs:element minOccurs="0" name="plantilla" type="xs:int" />
+          <xs:element name="properties" type="xs:base64Binary" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="timbrarTXTYPDFPResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:respuestaTimbradoTXT" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="numeroLetra">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="numeroLetraResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="timbrarTXTYPDF">
+    <wsdl:part name="parameters" element="tns:timbrarTXTYPDF" />
+  </wsdl:message>
+  <wsdl:message name="cancelarUUIDResponse">
+    <wsdl:part name="parameters" element="tns:cancelarUUIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="numeroLetraResponse">
+    <wsdl:part name="parameters" element="tns:numeroLetraResponse" />
+  </wsdl:message>
+  <wsdl:message name="agregarLogoResponse">
+    <wsdl:part name="parameters" element="tns:agregarLogoResponse" />
+  </wsdl:message>
+  <wsdl:message name="timbrarTXTYPDFPNomina">
+    <wsdl:part name="parameters" element="tns:timbrarTXTYPDFPNomina" />
+  </wsdl:message>
+  <wsdl:message name="timbrarTXTYPDFPNominaResponse">
+    <wsdl:part name="parameters" element="tns:timbrarTXTYPDFPNominaResponse" />
+  </wsdl:message>
+  <wsdl:message name="numeroLetra">
+    <wsdl:part name="parameters" element="tns:numeroLetra" />
+  </wsdl:message>
+  <wsdl:message name="agregarCSDResponse">
+    <wsdl:part name="parameters" element="tns:agregarCSDResponse" />
+  </wsdl:message>
+  <wsdl:message name="agregarLogo">
+    <wsdl:part name="parameters" element="tns:agregarLogo" />
+  </wsdl:message>
+  <wsdl:message name="timbrarTXTYPDFP">
+    <wsdl:part name="parameters" element="tns:timbrarTXTYPDFP" />
+  </wsdl:message>
+  <wsdl:message name="timbrarTXTResponse">
+    <wsdl:part name="parameters" element="tns:timbrarTXTResponse" />
+  </wsdl:message>
+  <wsdl:message name="timbrarTXTYPDFNominaResponse">
+    <wsdl:part name="parameters" element="tns:timbrarTXTYPDFNominaResponse" />
+  </wsdl:message>
+  <wsdl:message name="agregarCSD">
+    <wsdl:part name="parameters" element="tns:agregarCSD" />
+  </wsdl:message>
+  <wsdl:message name="timbrarTXTNominaResponse">
+    <wsdl:part name="parameters" element="tns:timbrarTXTNominaResponse" />
+  </wsdl:message>
+  <wsdl:message name="timbrarTXTYPDFPResponse">
+    <wsdl:part name="parameters" element="tns:timbrarTXTYPDFPResponse" />
+  </wsdl:message>
+  <wsdl:message name="timbrarTXTNomina">
+    <wsdl:part name="parameters" element="tns:timbrarTXTNomina" />
+  </wsdl:message>
+  <wsdl:message name="timbrarTXTYPDFResponse">
+    <wsdl:part name="parameters" element="tns:timbrarTXTYPDFResponse" />
+  </wsdl:message>
+  <wsdl:message name="cancelarUUID">
+    <wsdl:part name="parameters" element="tns:cancelarUUID" />
+  </wsdl:message>
+  <wsdl:message name="timbrarTXTYPDFNomina">
+    <wsdl:part name="parameters" element="tns:timbrarTXTYPDFNomina" />
+  </wsdl:message>
+  <wsdl:message name="timbrarTXT">
+    <wsdl:part name="parameters" element="tns:timbrarTXT" />
+  </wsdl:message>
+  <wsdl:portType name="TimbradoTXTService">
+    <wsdl:operation name="timbrarTXTYPDF">
+      <wsdl:input name="timbrarTXTYPDF" message="tns:timbrarTXTYPDF" />
+      <wsdl:output name="timbrarTXTYPDFResponse" message="tns:timbrarTXTYPDFResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="agregarCSD">
+      <wsdl:input name="agregarCSD" message="tns:agregarCSD" />
+      <wsdl:output name="agregarCSDResponse" message="tns:agregarCSDResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="timbrarTXTYPDFPNomina">
+      <wsdl:input name="timbrarTXTYPDFPNomina" message="tns:timbrarTXTYPDFPNomina" />
+      <wsdl:output name="timbrarTXTYPDFPNominaResponse" message="tns:timbrarTXTYPDFPNominaResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="timbrarTXTYPDFNomina">
+      <wsdl:input name="timbrarTXTYPDFNomina" message="tns:timbrarTXTYPDFNomina" />
+      <wsdl:output name="timbrarTXTYPDFNominaResponse" message="tns:timbrarTXTYPDFNominaResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="timbrarTXTNomina">
+      <wsdl:input name="timbrarTXTNomina" message="tns:timbrarTXTNomina" />
+      <wsdl:output name="timbrarTXTNominaResponse" message="tns:timbrarTXTNominaResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="cancelarUUID">
+      <wsdl:input name="cancelarUUID" message="tns:cancelarUUID" />
+      <wsdl:output name="cancelarUUIDResponse" message="tns:cancelarUUIDResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="timbrarTXT">
+      <wsdl:input name="timbrarTXT" message="tns:timbrarTXT" />
+      <wsdl:output name="timbrarTXTResponse" message="tns:timbrarTXTResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="agregarLogo">
+      <wsdl:input name="agregarLogo" message="tns:agregarLogo" />
+      <wsdl:output name="agregarLogoResponse" message="tns:agregarLogoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="timbrarTXTYPDFP">
+      <wsdl:input name="timbrarTXTYPDFP" message="tns:timbrarTXTYPDFP" />
+      <wsdl:output name="timbrarTXTYPDFPResponse" message="tns:timbrarTXTYPDFPResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="numeroLetra">
+      <wsdl:input name="numeroLetra" message="tns:numeroLetra" />
+      <wsdl:output name="numeroLetraResponse" message="tns:numeroLetraResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TimbradoTXTServiceSoapBinding" type="tns:TimbradoTXTService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="timbrarTXTYPDF">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="timbrarTXTYPDF">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="timbrarTXTYPDFResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="agregarCSD">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="agregarCSD">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="agregarCSDResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="timbrarTXTYPDFPNomina">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="timbrarTXTYPDFPNomina">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="timbrarTXTYPDFPNominaResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="timbrarTXTYPDFNomina">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="timbrarTXTYPDFNomina">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="timbrarTXTYPDFNominaResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="timbrarTXTNomina">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="timbrarTXTNomina">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="timbrarTXTNominaResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cancelarUUID">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="cancelarUUID">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="cancelarUUIDResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="agregarLogo">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="agregarLogo">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="agregarLogoResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="timbrarTXT">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="timbrarTXT">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="timbrarTXTResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="timbrarTXTYPDFP">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="timbrarTXTYPDFP">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="timbrarTXTYPDFPResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="numeroLetra">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="numeroLetra">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="numeroLetraResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TimbradoTXTService">
+    <wsdl:port name="TimbradoTXTServicePort" binding="tns:TimbradoTXTServiceSoapBinding">
+      <soap:address location="https://timbrado.expidetufactura.com.mx:8443/PruebasNomina12TXT/TimbradoTXTService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

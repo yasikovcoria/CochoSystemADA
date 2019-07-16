@@ -1,0 +1,24 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="CochoSystem_mx_com_expidetufactura_timbradodp_TimbradoWSService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://timbradodp.expidetufactura.com.mx:8453/timbrado/TimbradoWS</Value>
+    </Setting>
+    <Setting Name="CochoSystem_mx_com_expidetufactura_pruebastimbrado_TimbradoWSService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://pruebastimbrado.expidetufactura.com.mx:8443/preproduccion/TimbradoWS</Value>
+    </Setting>
+    <Setting Name="CochoSystem_mx_com_expidetufactura_timbradoP_TimbradoTXTService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://timbrado.expidetufactura.com.mx:8443/PruebasNomina12TXT/TimbradoTXTService</Value>
+    </Setting>
+    <Setting Name="CochoSystem_mx_com_expidetufactura_timbradoCancela_TimbradoTXTService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://timbrado.expidetufactura.com.mx:8443/ProduccionNomina12TXT/TimbradoTXTService</Value>
+    </Setting>
+    <Setting Name="CochoSystem_mx_com_expidetufactura_cancelacion_CancelacionPruebas" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://cancelacion.expidetufactura.com.mx:8080/cancelacion/CancelacionPruebas</Value>
+    </Setting>
+    <Setting Name="CochoSystem_mx_com_expidetufactura_cancelacion1_CancelacionProductivo" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://cancelacion.expidetufactura.com.mx:8080/cancelacion/CancelacionProductivo</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

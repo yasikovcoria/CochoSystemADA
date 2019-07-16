@@ -1,0 +1,52 @@
+﻿body {
+}
+
+input[type=tel] {
+    border-radius:5px;
+}
+.auto-style1 {
+            width: 189px;
+        }
+td {
+    padding-top:10px;
+    padding-left:1PX;
+    padding-right:10PX;
+    padding-bottom:10px;
+    font-family:Arial;
+}
+.table {
+    padding-left:10%;
+}
+div.autorelleno { /*se aplica el estilo al la div que mostrara la lista*/
+ position:absolute;
+ width:252px;
+ background-color:white;
+ border:1px solid #888;
+ margin:0px;
+ padding:0px;
+ }
+ div.autorelleno ul {/**estilo a la lista*/
+ list-style-type:none;
+ margin:0px;
+ padding:0px;
+ }
+ div.autorelleno ul li.selected { background-color: #ffb;}/*estilo ciando se
+ selecciona un item*/
+ div.autorelleno ul li {/*estilo a los items*/
+ list-style-type:none;
+ display:block;
+ margin:0;
+ padding:2px;
+ height:18px;
+ cursor:pointer;
+ }
+ #cuerpo{/*estilo al cuerpo general*/
+ position:absolute;
+ width:37%;
+ top: 25%;
+ left:30%;
+ background:#F0EDE0;
+ }
+
+
+

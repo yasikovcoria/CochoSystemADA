@@ -1,0 +1,11 @@
+Cantidad	Number
+Unidad	String	1000
+Descripcion	String	1000
+Importe	currency
+ValorUnitario	currency
+TotalIva	currency
+SubTotal	currency
+RazonSocial	String	1000
+TotalCotizacion	Currency
+NumeroCotizacion	String	100	
+		

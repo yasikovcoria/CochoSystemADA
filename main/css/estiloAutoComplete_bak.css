@@ -1,0 +1,21 @@
+A:link {	COLOR: #4F6EB2; BACKGROUND-COLOR: transparent; TEXT-DECORATION: none}
+A:visited {	COLOR: #4F6EB2; BACKGROUND-COLOR: transparent; TEXT-DECORATION: none}
+A:active {	COLOR: red; BACKGROUND-COLOR: transparent; TEXT-DECORATION: none}
+A:hover {	TEXT-DECORATION: underline}
+table {style="border-collapse collapse";}
+B {	FONT-WEIGHT: bold}
+.celda_titulo {  FONT-WEIGHT: bold; FONT-SIZE: 10px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif }
+
+tr.SeleccionDynamicCombo {background-color: skyblue;cursor: pointer;}
+tr.ContenidoDynamicCombo {background-color: #F0F0F0;cursor: pointer;FONT-WEIGHT: bold; FONT-SIZE: 10px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif}
+tr.registros {font-size:9px;FONT-WEIGHT: bold; height:18px; border-style:hidden; background-color:skyblue;}
+
+td.sinbordes {FONT-WEIGHT: normal; FONT-SIZE: 12px; FONT-FAMILY: verdana,arial,helvetica,sans-serif;border-top-style:none; border-right-style:none; border-bottom-style:none; border-left-style:none;}
+td.registros {border-top-style:hidden; border-right-style:hidden; border-bottom-style:hidden; border-left-style:hidden;}
+td.paginacion {border-color: #4B4B4B; border-style:hidden;}
+
+div.dynamicCombo {border: 0px solid #7499C5;height:17px;}
+div.paginacion {background-color:#E1E4FF;}
+
+input.dynamicCombo {height:17px;border: 0px transparent;font-size: 9px;background-color: lightblue; color: #4F6EB2;font-weight: bold;FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif}
+input.paginacion {background-color:skyblue; color: #4B4B4B;font-size: 8px;font-weight: bold;border: 1px solid #4B4B4B;text-align: center;}

@@ -1,0 +1,47 @@
+EmisorNombre	String	1000	
+EmisorCalle	String	1000	
+EmisorNumeroExterior	String	100	
+EmisorNumeroInterior	String	100	
+EmisorCodigoPostal	String	1000	
+EmisorColonia	String	1000	
+EmisorMunicipio	String	1000	
+EmisorEstado	String	1000	
+EmisorPais	String	1000	
+EmisorRFC	String	1000	
+EmisorTelefono	String	100
+FechaFolioElectronico	datetime	
+EmisorRegimenFiscal	String	1000	
+IdEmpresa	String	1000	
+ReceptorCalle	String	4000	
+ReceptorNumeroExterior	String	400	
+ReceptorNumeroInterior	String	100	
+ReceptorColonia	String	1000	
+ReceptorPoblacion	String	1000	
+ReceptorMuncipio	String	1000	
+ReceptorEstado	String	1000	
+ReceptorPais	String	1000	
+DireccionArmanda	String	4000	
+RFCReceptor	String	100	
+ReceptorCurp	String	1000	
+TotalCotizacion	Currency		
+SubTotalCotizacion	Currency		
+IvaCotizacion	Currency		
+FolioCotizacion	Number		
+MetodoPago	String	1000	
+FormaPago	String	1000	
+CuentaPago	String	1000
+CondicionPago	String	100	
+Cantidad1	Number
+ReceptorNombre	String	4000
+TimbreFiscal	String	1000
+FechaTimbrado	datetime
+NumeroCotizacion	Number
+EmisorCertificado	String	1000
+noCertificadoSAT	String	1000
+CadenaOriginal	String	5000
+SelloCFD	String	5000
+selloSAT	String	5000
+cadenaOriginalSAT	String	5000
+MontoCotizacionLetra	String	4000
+DireccionArmada	String	4000
+Impuesto5Millar	Currency

@@ -1,0 +1,8 @@
+Cantidad	Number
+Unidad	String	1000
+Descripcion	String	1000
+Importe	currency
+ValorUnitario	currency		
+ClaveSAT	String	1000
+IvaIndividual	Currency	
+TipoImpuestoSAT	String	1000

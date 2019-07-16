@@ -1,0 +1,22 @@
+﻿.titulo {
+            width: 1000px;
+            font-size: 12px;
+            font-family: Arial;
+            text-align: center;
+            border-color: blue;
+            border-bottom: solid;
+            color: black;
+            background-color: lightgray;
+        }
+        .blanco {
+            background-color:white;
+            font-size:11px;
+            font-weight:bold;
+            color:black;
+        }
+        .azul {
+            background-color:rgba(95, 188, 248, 0.7);
+            font-size:11px;
+            font-weight:bold;
+            color:black;
+        }

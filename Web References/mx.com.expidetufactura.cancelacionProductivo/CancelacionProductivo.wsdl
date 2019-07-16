@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://service.xpd.mx/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="CancelacionProductivo" targetNamespace="http://service.xpd.mx/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://service.xpd.mx/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="cancelar" type="tns:cancelar" />
+      <xs:element name="cancelarResponse" type="tns:cancelarResponse" />
+      <xs:complexType name="cancelar">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="usuario" type="xs:string" />
+          <xs:element minOccurs="0" name="token" type="xs:string" />
+          <xs:element minOccurs="0" name="xmlBytes" type="xs:base64Binary" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="cancelarResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:respuestaCancelacion" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="respuestaCancelacion">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="acuse" type="xs:string" />
+          <xs:element minOccurs="0" name="codEstatus" type="xs:string" />
+          <xs:element minOccurs="0" name="codMensaje" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="estatusUUIDs" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="uuids" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="cancelar">
+    <wsdl:part name="parameters" element="tns:cancelar" />
+  </wsdl:message>
+  <wsdl:message name="cancelarResponse">
+    <wsdl:part name="parameters" element="tns:cancelarResponse" />
+  </wsdl:message>
+  <wsdl:portType name="CancelacionProductivo">
+    <wsdl:operation name="cancelar">
+      <wsdl:input name="cancelar" message="tns:cancelar" />
+      <wsdl:output name="cancelarResponse" message="tns:cancelarResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CancelacionProductivoSoapBinding" type="tns:CancelacionProductivo">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="cancelar">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="cancelar">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="cancelarResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CancelacionProductivo">
+    <wsdl:port name="CancelacionProductivoPort" binding="tns:CancelacionProductivoSoapBinding">
+      <soap:address location="http://cancelacion.expidetufactura.com.mx:8080/cancelacion/CancelacionProductivo" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
